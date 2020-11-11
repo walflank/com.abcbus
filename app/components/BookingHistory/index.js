@@ -9,7 +9,7 @@ import {useTranslation} from 'react-i18next';
 export default function BookingHistory(props) {
   const {t} = useTranslation();
   const {colors} = useTheme();
-  const {style, name, checkIn, checkOut, price, total, onPress} = props;
+  const {style, name, checkIn, checkOut, price, cashback, total, onPress} = props;
 
   return (
     <TouchableOpacity
@@ -50,6 +50,9 @@ export default function BookingHistory(props) {
       <View style={[styles.validContent, {backgroundColor: colors.card}]}>
         <Text overline semibold>
           {total}
+        </Text>
+        <Text semibold primaryColor>
+          + {cashback} na carteira
         </Text>
         <Text overline semibold>
           {price}

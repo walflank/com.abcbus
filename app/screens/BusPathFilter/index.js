@@ -102,10 +102,11 @@ export default function BusPathFilter({navigation}) {
               style={styles.itemPick}
               onPress={() => navigation.navigate('SelectBus')}>
               <Text caption1 light style={{marginBottom: 5}}>
-                {t('from')}
+                {/*t('from')*/}
+                Saída
               </Text>
               <Text headline semibold numberOfLines={1}>
-                Smart Market
+                Campinas
               </Text>
             </TouchableOpacity>
             <View style={[styles.linePick, {backgroundColor: colors.border}]} />
@@ -113,39 +114,42 @@ export default function BusPathFilter({navigation}) {
               style={styles.itemPick}
               onPress={() => navigation.navigate('SelectBus')}>
               <Text caption1 light style={{marginBottom: 5}}>
-                {t('to')}
+                {/*t('to')*/}
+                Chegada
               </Text>
               <Text headline semibold numberOfLines={1}>
-                Harvard University
+                São Paulo
               </Text>
             </TouchableOpacity>
           </View>
           <View style={styles.contentQuest}>
             <DatePicker
-              label={t('date')}
-              selected="2020-02-29"
+              //label={t('date')}
+              label={'Data'}
+              selected="01/02/2021"
               style={{flex: 6, marginRight: 15}}
             />
             <TouchableOpacity
               style={[styles.duration, {backgroundColor: colors.card}]}
               onPress={() => setmModalVisible(true)}>
               <Text caption1 grayColor style={{marginBottom: 5}}>
-                {t('passenger')}
+                {/*t('passenger')*/} Passageiros
               </Text>
               <Text body1 semibold>
-                {people} {t('people')}
+                {people} {/*t('people')*/} Pessoas
               </Text>
             </TouchableOpacity>
           </View>
           <Text headline semibold>
-            {t('price').toUpperCase()}
+            {/*t('price').toUpperCase()*/}
+            {'PREÇO'}
           </Text>
           <View style={styles.contentRange}>
             <Text caption1 grayColor>
-              $100
+              R$ 50
             </Text>
             <Text caption1 grayColor>
-              $1000
+              R$ 1000
             </Text>
           </View>
           <RangeSlider
@@ -174,9 +178,9 @@ export default function BusPathFilter({navigation}) {
             }}
           />
           <View style={styles.contentResultRange}>
-            <Text caption1>{t('avg_price')}</Text>
+            <Text caption1>Valor da passagem {/*t('avg_price')*/}</Text>
             <Text caption1>
-              ${priceBegin} - ${priceEnd}
+              R$ {priceBegin} - R$ {priceEnd}
             </Text>
           </View>
         </View>

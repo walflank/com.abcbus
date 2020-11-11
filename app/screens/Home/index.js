@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   FlatList,
   Alert,
+  Dimensions,
 } from 'react-native';
 import {
   Image,
@@ -32,6 +33,8 @@ import { useTranslation } from 'react-i18next';
 //import IconAnt from 'react-native-vector-icons/AntDesign';
 //import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 //import MaterialCIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+
+const { height, width } = Dimensions.get('window');
 
 export default function Home({ navigation }) {
   const { t } = useTranslation();
@@ -186,9 +189,10 @@ export default function Home({ navigation }) {
   const marginTopBanner = heightImageBanner - heightHeader;
 
   return (
+
     <View style={{ flex: 1 }}>
       <Animated.Image
-        source={Images.backgroundHome}
+        source={Images.backgroundHomeBus}
         //source={require("@assets/images/trip-3.jpg")}
         //source={Images.trip3}
         style={[
@@ -240,10 +244,34 @@ export default function Home({ navigation }) {
                   {/*<Text body1 grayColor>
                     {t('what_are_you_looking_for')}{t('what_are_you_looking_for') + 'asdasudhaisud'}
                   </Text>*/}
-                  <Text title3 semibold style={{ borderWidth: 0, borderColor: 'red' }}>
-                    Seu saldo é R$ 89.23
+                  <Image source={Images.logo} style={{ width: 30, height: 30, borderRadius: 8 }} />
+                  <Text black title2 semibold style={{ borderWidth: 0, borderColor: 'red' }}>
+                    Olá Felipe, 
                   </Text>
                 </View>
+                <View
+                  style={[BaseStyle.textInput, { backgroundColor: colors.card }]}>
+                  {/*<Text body1 grayColor>
+                    {t('what_are_you_looking_for')}{t('what_are_you_looking_for') + 'asdasudhaisud'}
+                  </Text>*/}
+                  <Text title3 semibold style={{ borderWidth: 0, borderColor: 'red' }}>
+                    você tem
+                  </Text>
+                  <Text black title2 primaryColor style={{ borderWidth: 0, borderColor: 'red' }}>
+                    &nbsp;R$ 89.23&nbsp;
+                  </Text>
+                  <Text title3 semibold style={{ borderWidth: 0, borderColor: 'red' }}>
+                    para viajar
+                  </Text>
+                </View>
+                
+                {/*<View
+                  style={[BaseStyle.textInput, { backgroundColor: colors.card }]}>
+                  <Text title3 semibold style={{ borderWidth: 0, borderColor: 'red' }}>
+                    Viaje com a gente!
+                  </Text>
+                </View>*/}
+
               </TouchableOpacity>
               {renderIconService()}
             </View>
@@ -341,7 +369,8 @@ export default function Home({ navigation }) {
                   location={item.location}
                   month={item.month}
                   day={item.day}
-                  onPress={() => navigation.navigate('EventDetail')}
+                  //onPress={() => navigation.navigate('EventDetail')}
+                  onPress={() => { Alert.alert('Arrume suas malas', 'Sua próxima viagem está chegando...'); }}
                   style={{ marginLeft: 15 }}
                 />
               )}
@@ -356,12 +385,20 @@ export default function Home({ navigation }) {
             <Text body2 grayColor>
               Pressione a promoção que combina com você
             </Text>
-            <Image source={Images.bannerPromotion1} style={styles.promotionBanner} />
+            {/*<Image source={Images.bannerPromotionLogo} style={styles.promotionBanner} />
+            <View style={[styles.line, { backgroundColor: colors.border }]} />*/}
+            <Image source={Images.bannerPromotionBusChildren} style={styles.promotionBanner} />
+            <View style={[styles.line, { backgroundColor: colors.border }]} />
+            <Image source={Images.bannerPromotionFanta} style={styles.promotionBanner} />
+            <View style={[styles.line, { backgroundColor: colors.border }]} />
+            <Image source={Images.bannerPromotionTickets} style={styles.promotionBanner} />
+            <View style={[styles.line, { backgroundColor: colors.border }]} />
+            {/*<Image source={Images.bannerPromotion1} style={styles.promotionBanner} />
             <View style={[styles.line, { backgroundColor: colors.border }]} />
             <Image source={Images.bannerPromotion2} style={styles.promotionBanner} />
             <View style={[styles.line, { backgroundColor: colors.border }]} />
             <Image source={Images.bannerPromotion3} style={styles.promotionBanner} />
-            <View style={[styles.line, { backgroundColor: colors.border }]} />
+            <View style={[styles.line, { backgroundColor: colors.border }]} />*/}
           </View>
 
 

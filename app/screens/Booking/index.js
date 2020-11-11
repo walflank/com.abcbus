@@ -27,6 +27,7 @@ export default function Booking({navigation}) {
         checkOut={item.checkOut}
         total={item.total}
         price={item.price}
+        cashback={item.cashback}
         style={{paddingVertical: 10, marginHorizontal: 20}}
         onPress={() => {
           navigation.navigate('BookingDetail');

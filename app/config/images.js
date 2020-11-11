@@ -83,13 +83,18 @@ export const Images = {
   event7: require("@assets/images/event-7.jpg"),
 
   backgroundHome: require("@assets/images/background-home.jpg"),
-  
+  backgroundHomeBus: require("@assets/images/background-home-bus.jpg"),
+
   bannerPromotion1: require("@assets/images/banner-promotion-1.jpg"),
   bannerPromotion2: require("@assets/images/banner-promotion-2.jpg"),
   bannerPromotion3: require("@assets/images/banner-promotion-3.jpg"),
-  
+  bannerPromotionFanta: require("@assets/images/banner-promotion-fanta.jpg"),
+  bannerPromotionBusChildren: require("@assets/images/banner-promotion-bus-children.jpg"),
+  bannerPromotionTickets: require("@assets/images/banner-promotion-tickets.jpg"),
+  bannerPromotionLogo: require("@assets/images/banner-promotion-logo.jpg"),
+
   nextTravel1: require("@assets/images/next-travel-1.jpg"),
   nextTravel2: require("@assets/images/next-travel-2.jpg"),
-  
+
   walletBackground: require("@assets/images/wallet-background.jpg"),
 };

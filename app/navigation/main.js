@@ -222,7 +222,7 @@ function BottomTabNavigator() {
         name="Home"
         component={Home}
         options={{
-          title: 'Home',
+          title: 'Início',
           tabBarIcon: ({color}) => {
             return <Icon color={color} name="home" size={20} solid />;
           },
@@ -250,7 +250,7 @@ function BottomTabNavigator() {
         }}
       />
       
-      <BottomTab.Screen
+      {/*<BottomTab.Screen
         name="Notícias"
         component={Post}
         options={{
@@ -269,7 +269,7 @@ function BottomTabNavigator() {
             return <Icon solid color={color} name="user-circle" size={20} />;
           },
         }}
-      />
+      />*/}
     </BottomTab.Navigator>
   );
 

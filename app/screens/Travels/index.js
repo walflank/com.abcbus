@@ -27,6 +27,7 @@ export default function Travels({ navigation }) {
         checkOut={item.checkOut}
         total={item.total}
         price={item.price}
+        cashback={item.cashback}
         style={{ paddingVertical: 10, marginHorizontal: 20 }}
         onPress={() => {
           //navigation.navigate('BookingDetail');
@@ -36,12 +37,7 @@ export default function Travels({ navigation }) {
     );
   };
 
-  /**
-   * @description Loading booking item history one by one
-   * @author Passion UI <passionui.com>
-   * @date 2019-08-03
-   * @returns
-   */
+  
   return (
     <SafeAreaView style={BaseStyle.safeAreaView} forceInset={{ top: 'always' }}>
       <Header title={'Minhas viagens'} />

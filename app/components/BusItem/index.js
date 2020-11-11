@@ -34,7 +34,7 @@ export default function BusItem(props) {
         </View>
         <View style={{flex: 1.5, alignItems: 'center'}}>
           <Text caption1 light>
-            {totalHour} {t('hours')}
+            {totalHour} Horas {/*'t('hours')'*/}
           </Text>
           <Icon
             name="long-arrow-alt-right"
@@ -70,9 +70,9 @@ export default function BusItem(props) {
           <Text title3 semibold primaryColor>
             {price}
           </Text>
-          <Text caption1 light style={{marginLeft: 5}}>
-            {t('seat')}
-          </Text>
+          {/*<Text caption1 light style={{marginLeft: 5}}>
+            ticket
+          </Text>*/}
         </View>
       </View>
     </TouchableOpacity>
