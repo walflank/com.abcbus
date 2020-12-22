@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { View, ScrollView, TouchableOpacity } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, ScrollView, TouchableOpacity, Alert } from 'react-native';
 import { BaseStyle, BaseColor, useTheme } from '@config';
 import {
   Header,
@@ -13,6 +13,8 @@ import { useTranslation } from 'react-i18next';
 import styles from './styles';
 import Modal from 'react-native-modal';
 
+import axios from 'axios';
+
 export default function BusPath({ navigation }) {
   const { colors } = useTheme();
   const { t } = useTranslation();
@@ -21,6 +23,25 @@ export default function BusPath({ navigation }) {
   const [modalVisible, setModalVisible] = useState(false);
   const [people, setPeople] = useState(1);
 
+
+  const [origens, setOrigens] = useState([]);
+  
+  useEffect(() => {
+
+    Alert.alert('okok', 'iasjdoaisjd');
+
+    setTimeout(() => {
+      
+      const result = axios('https://app.logpay.com.br/api-hubbus/v1/localidade/buscaOrigem');
+      console.log('====================================================== result');
+      console.log(result);
+      console.log('====================================================== result.data.data');
+      console.log(result.data);
+
+      setOrigens([{ cidade: 'teste1'}, {cidade: 'teste2'}]);
+
+    }, 1000);
+  }, []);
 
   const renderModal = () => {
     return (
@@ -100,12 +121,15 @@ export default function BusPath({ navigation }) {
             style={[styles.contentPickDate, { backgroundColor: colors.card }]}>
             <TouchableOpacity
               style={styles.itemPick}
-              onPress={() => navigation.navigate('SelectBus')}>
+              onPress={() => { 
+                navigation.navigate('SelectBus');
+                }}
+              >
               <Text caption1 light style={{ marginBottom: 5 }}>
-                Saída
+                Saída {origens.length}
               </Text>
               <Text headline semibold numberOfLines={1}>
-                Campinas
+                Campinas X
               </Text>
             </TouchableOpacity>
             <View style={[styles.linePick, { backgroundColor: colors.border }]} />

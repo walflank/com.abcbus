@@ -25,6 +25,9 @@ export default function Loading({navigation}) {
     <View style={[styles.container, {backgroundColor: colors.primary}]}>
 
 
+
+
+
         {/*<Text title1 whiteColor semibold>
           Carregando
         </Text>*/}
